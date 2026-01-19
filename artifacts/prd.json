@@ -1,0 +1,134 @@
+{
+  "project": "Claude History Search",
+  "spec": "artifacts/spec.json",
+  "branch": "dev/claude-history-search",
+  "config": {
+    "maxParallelAgents": 5,
+    "defaultModel": "sonnet",
+    "budgetPerStory": 2.0
+  },
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Project scaffolding and dependencies",
+      "description": "Set up Python package structure for Claude History Search",
+      "acceptanceCriteria": [
+        "Package installs via pipx",
+        "Basic directory structure created",
+        "Dependencies configured"
+      ],
+      "priority": "1",
+      "passes": false,
+      "estimatedIterations": 2,
+      "files": [
+        "pyproject.toml",
+        "src/__init__.py",
+        "README.md"
+      ],
+      "dependsOn": [],
+      "notes": "Foundation story"
+    },
+    {
+      "id": "US-002",
+      "title": "Search returns relevant conversations within 2 sec",
+      "description": "Implement Search returns relevant conversations within 2 seconds",
+      "acceptanceCriteria": [
+        "Search returns relevant conversations within 2 seconds",
+        "All tests pass",
+        "Documentation updated"
+      ],
+      "priority": "2",
+      "passes": false,
+      "estimatedIterations": 2,
+      "files": [
+        "src/main.py"
+      ],
+      "dependsOn": [
+        "US-001"
+      ],
+      "notes": "Based on success criterion SC-001"
+    },
+    {
+      "id": "US-003",
+      "title": "Can find conversations by topic or natural languag",
+      "description": "Implement Can find conversations by topic or natural language query",
+      "acceptanceCriteria": [
+        "Can find conversations by topic or natural language query",
+        "All tests pass",
+        "Documentation updated"
+      ],
+      "priority": "3",
+      "passes": false,
+      "estimatedIterations": 2,
+      "files": [
+        "src/main.py"
+      ],
+      "dependsOn": [
+        "US-001"
+      ],
+      "notes": "Based on success criterion SC-002"
+    },
+    {
+      "id": "US-004",
+      "title": "Supports at least 1000 conversation files",
+      "description": "Implement Supports at least 1000 conversation files",
+      "acceptanceCriteria": [
+        "Supports at least 1000 conversation files",
+        "All tests pass",
+        "Documentation updated"
+      ],
+      "priority": "4",
+      "passes": false,
+      "estimatedIterations": 2,
+      "files": [
+        "src/main.py"
+      ],
+      "dependsOn": [
+        "US-001"
+      ],
+      "notes": "Based on success criterion SC-003"
+    },
+    {
+      "id": "US-005",
+      "title": "Results show conversation summary and relevance sc",
+      "description": "Implement Results show conversation summary and relevance score",
+      "acceptanceCriteria": [
+        "Results show conversation summary and relevance score",
+        "All tests pass",
+        "Documentation updated"
+      ],
+      "priority": "5",
+      "passes": false,
+      "estimatedIterations": 2,
+      "files": [
+        "src/main.py"
+      ],
+      "dependsOn": [
+        "US-001"
+      ],
+      "notes": "Based on success criterion SC-004"
+    },
+    {
+      "id": "US-006",
+      "title": "Comprehensive test suite",
+      "description": "Create test suite covering all features",
+      "acceptanceCriteria": [
+        "Unit tests for all modules",
+        "Integration tests",
+        "Test coverage >80%"
+      ],
+      "priority": "6",
+      "passes": false,
+      "estimatedIterations": 3,
+      "files": [
+        "tests/test_main.py"
+      ],
+      "dependsOn": [
+        "US-001",
+        "US-002",
+        "US-003"
+      ],
+      "notes": "Testing story"
+    }
+  ]
+}
