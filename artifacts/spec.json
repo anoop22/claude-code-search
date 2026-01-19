@@ -1,0 +1,79 @@
+{
+  "project": "Claude History Search",
+  "version": "0.1.0",
+  "repository": "local",
+  "problem": "Claude Code conversations are stored in .jsonl files with no way to search them semantically. Finding past discussions wastes tokens.",
+  "goal": "Build a CLI for semantic search over Claude Code conversation history.",
+  "successCriteria": [
+    {
+      "id": "SC-001",
+      "description": "Search returns relevant conversations within 2 seconds",
+      "met": false
+    },
+    {
+      "id": "SC-002",
+      "description": "Can find conversations by topic or natural language query",
+      "met": false
+    },
+    {
+      "id": "SC-003",
+      "description": "Supports at least 1000 conversation files",
+      "met": false
+    },
+    {
+      "id": "SC-004",
+      "description": "Results show conversation summary and relevance score",
+      "met": false
+    }
+  ],
+  "scope": {
+    "inScope": [
+      "Index Claude Code conversation history from JSONL files",
+      "Semantic vector search using local embeddings",
+      "CLI interface for queries",
+      "Display matching conversations with context"
+    ],
+    "outOfScope": [
+      "Web UI",
+      "Real-time indexing",
+      "Cloud storage integration",
+      "Multi-user support"
+    ]
+  },
+  "technicalApproach": {
+    "language": "Python",
+    "framework": "ChromaDB, Click, sentence-transformers",
+    "distribution": "pipx or pip install",
+    "claudeCLI": "claude -p with JSON output",
+    "parallelExecution": "Task tool for concurrent agents",
+    "versionControl": "Git with feature branches",
+    "automation": "GitHub Actions CI/CD",
+    "stateManagement": "JSON artifacts in artifacts/ directory",
+    "outputFormat": "JSON for machine parsing",
+    "sessionHandling": "Stateless with artifact persistence"
+  },
+  "acceptanceTests": [
+    {
+      "id": "AT-001",
+      "description": "Verify: Search returns relevant conversations within 2 seconds",
+      "passed": false
+    },
+    {
+      "id": "AT-002",
+      "description": "Verify: Can find conversations by topic or natural language query",
+      "passed": false
+    },
+    {
+      "id": "AT-003",
+      "description": "Verify: Supports at least 1000 conversation files",
+      "passed": false
+    },
+    {
+      "id": "AT-004",
+      "description": "Verify: Results show conversation summary and relevance score",
+      "passed": false
+    }
+  ],
+  "createdAt": "2026-01-19T17:27:08Z",
+  "designDoc": "docs/design.md"
+}
